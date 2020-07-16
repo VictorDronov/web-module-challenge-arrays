@@ -218,6 +218,9 @@ console.log(getAverageWordLength(originalFlavors))
 // This returns 1.93333333
 
 
+
+
+
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
 
 Your function should accept 4 different arrays,
@@ -298,9 +301,14 @@ var regionalFlavors = ["Pink Bubblegum",
     "Quarterback Crunch",
     "Chocolate Chocolate Chip Cheesecake",
     "Caramel 'n' Cookies"]
+// /originalFlavors, currentFlavors, seasonalFlavors,newFlavors
 
-function getRandomFlavors(/*code here*/){
-
-    /*code here*/
-
+function getRandomFlavors(arr1,arr2,arr3,arr4){
+    let allFlavors = [...arr1,...arr2,...arr3,...arr4]
+    let random = []
+    for (let i=0; i<allFlavors.length; i++){
+    }
+    return allFlavors
 }
+
+console.log(getRandomFlavors(originalFlavors, seasonalFlavors,regionalFlavors,newFlavors))
