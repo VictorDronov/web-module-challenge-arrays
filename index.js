@@ -135,12 +135,12 @@ Your function should accept:
 2 arguments 1 for your new array and one for your original array
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
-
+let flavorsOrigin = []
 function copy(arr){
-    let flavorsOrigin = [...arr]   
+    flavorsOrigin = [...arr]   
     return flavorsOrigin
 }
-console.log(copy(originalFlavors))
+console.log(copy(originalFlavors,flavorsOrigin))
 
 
 
@@ -189,14 +189,34 @@ and should return the average number of words per item in the array.
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
 function getAverageWordLength(arr){
+    let numberInArray = arr.length
+    let wordsArray = []
+    let legths = 0
+    // this loop takes the original array and counts its length the length is counted and then the string is split
     for (let i=0; i<arr.length; i++){
-        if (arr[i]){
-            arr.length
-        }
+        wordsArray.push(arr[i].split(' '))
     }
-    return arr.length
+// the split string is then pushed into the empty array
+// then the empty/new arrays length is counted and then added in to legths variable and its length is counted
+    for (let i =0; i<wordsArray.length; i++){
+        legths+=wordsArray[i].length
+    } 
+    // then legths the count that goes in to here it is divided by the original number 
+    return legths/numberInArray
+
+    // let splitArray = []
+    // let stringSplit = ''
+    // for (let i=0; i<arr.length; i++){
+    //     if (arr[i].slice(i,1)){
+    //         splitArray.push(arr[i])
+    //     }
+    // }
+    // return splitArray
 }
 console.log(getAverageWordLength(originalFlavors))
+
+// This returns 1.93333333
+
 
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
 
